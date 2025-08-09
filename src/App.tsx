@@ -25,7 +25,7 @@ function App() {
     try {
       setLoading(true);
       // memos 컬렉션을 제외한 컬렉션들만 표시
-      const knownCollections = ['baekunjson', 'changjo', 'chungsong', 'converjson', 'jeongui', 'mirae'];
+      const knownCollections = ['Baekun', 'Changjo', 'Chungsong', 'ConvergenceHall', 'Jeongui', 'Mirae'];
       
       const collectionsData: CollectionData[] = [];
       
