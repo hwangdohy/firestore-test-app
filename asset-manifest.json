@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/firestore-test-app/static/css/main.3818d941.css",
-    "main.js": "/firestore-test-app/static/js/main.0063d821.js",
+    "main.js": "/firestore-test-app/static/js/main.736b4c3f.js",
     "static/js/453.41ca8efd.chunk.js": "/firestore-test-app/static/js/453.41ca8efd.chunk.js",
     "index.html": "/firestore-test-app/index.html",
     "main.3818d941.css.map": "/firestore-test-app/static/css/main.3818d941.css.map",
-    "main.0063d821.js.map": "/firestore-test-app/static/js/main.0063d821.js.map",
+    "main.736b4c3f.js.map": "/firestore-test-app/static/js/main.736b4c3f.js.map",
     "453.41ca8efd.chunk.js.map": "/firestore-test-app/static/js/453.41ca8efd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3818d941.css",
-    "static/js/main.0063d821.js"
+    "static/js/main.736b4c3f.js"
   ]
 }
