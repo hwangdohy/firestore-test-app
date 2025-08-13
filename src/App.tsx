@@ -19,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [newDocument, setNewDocument] = useState<{[key: string]: any}>({});
   const [editingDoc, setEditingDoc] = useState<{id: string, data: {[key: string]: any}} | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // 모든 컬렉션 목록 가져오기
   const fetchCollections = async () => {
@@ -199,10 +200,31 @@ function App() {
             {/* 문서 목록 */}
             <div className="document-list">
               <h2>문서 목록 - {selectedCollection}</h2>
-              {selectedCollectionData.documents.length === 0 ? (
+              <div className="search-bar">
+                <input
+                  type="text"
+                  placeholder="문서 검색..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
+              </div>
+              {selectedCollectionData.documents.filter(doc => {
+                if (!searchQuery) return true;
+                if (doc.roomName_ko === '') return false;
+                return Object.values(doc).some(value =>
+                  String(value).toLowerCase().includes(searchQuery.toLowerCase())
+                );
+              }).length === 0 ? (
                 <p className="no-documents">이 컬렉션에는 문서가 없습니다.</p>
               ) : (
-                selectedCollectionData.documents.map((document) => (
+                selectedCollectionData.documents.filter(doc => {
+                  if (!searchQuery) return true;
+                  if (doc.roomName_ko === '') return false;
+                  return Object.values(doc).some(value =>
+                    String(value).toLowerCase().includes(searchQuery.toLowerCase())
+                  );
+                }).map((document) => (
                   <div key={document.id} className="document-item">
                     {editingDoc?.id === document.id ? (
                       // 수정 모드
